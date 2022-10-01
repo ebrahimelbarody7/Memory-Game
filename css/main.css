@@ -1,0 +1,117 @@
+*{
+    box-sizing: border-box;
+}
+body{
+    font-family: Arial, Helvetica, sans-serif;
+}
+.control-buttons{
+    width: 100%;
+    height: 100%;
+    position:fixed ;
+    background-color: #00e7ff;
+    opacity: .3;
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    background-color: black;
+    opacity: .9;
+    top: 0;
+    z-index: 20;
+}
+.control-buttons span{
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    color: white;
+    font-size: 30px;
+    transform: translate(-50%, -50%);
+    user-select: none;
+    cursor: pointer;
+    background-color: #333;
+    padding: 20px;
+    border-radius: 20px;
+}
+.info-container{
+    background-color: #eee;
+    padding: 20px;
+    border: 2px solid;
+    margin: 10px auto 0;
+    max-width: 1080px;
+    font-size: 24px;
+    overflow: hidden;
+
+}
+.info-container .name{
+    float: left;
+    width: 50%;
+}
+.info-container .tries{
+    float: right;
+    text-align: right;
+    width: 50%;
+
+}
+.memory-game{
+    display: grid; 
+    max-width: 1080px;
+    margin: 20px auto;
+    grid-template-columns: repeat(auto-fill,minmax(170px,auto));
+    gap: 20px;
+    position: relative;
+
+}
+
+.memory-game.stop{
+    pointer-events: none;
+}
+.block{
+    text-align: center;
+    position: relative;
+    height: 150px; text-align: center;
+    
+    position: relative;
+}
+.memory-game .front.is-flipped,.memory-game .front.good{
+    transform: rotateY(90deg);
+    pointer-events: none;
+}
+.front{
+    background-color: #333;
+    position: absolute;
+    z-index: 1;
+    width: 100%;
+    height: 100%;
+    transition: .5s;
+    transform: rotateY(0);
+    cursor: pointer;
+}
+.front::before{
+    content: "!";
+
+    color: white;
+
+    font-size: 150px;
+    line-height: 150px;
+}
+.back{
+    background-color: #607D8B;
+    position: relative;
+    height: 100%;
+    line-height: 15;
+    /* transition: 5s; */
+
+}
+/* .block i{
+    
+} */
+.block i::before{
+    color: #00e7ff;
+}
+.block.face{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    backface-visibility: hidden;
+    text-align: center;
+    
+}
